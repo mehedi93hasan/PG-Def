@@ -1,0 +1,25 @@
+# PG-Def: Protocol-Grounded Defense Framework
+# Python dependencies
+# Tested with Python 3.9+
+
+# Core ML
+numpy>=1.24.0
+scikit-learn>=1.3.0
+xgboost>=1.7.0
+imbalanced-learn>=0.11.0
+
+# Data processing
+pandas>=2.0.0
+
+# Adversarial evaluation (optional)
+adversarial-robustness-toolbox>=1.16.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Network packet processing (optional, for live capture)
+scapy>=2.5.0
+
+# Utilities
+tqdm>=4.65.0
