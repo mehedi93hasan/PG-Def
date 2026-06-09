@@ -283,8 +283,12 @@ class AdaptiveDefenseSystem:
 
         else:
             # Borderline: secondary inspection on critical subspace
+            # Build full 30-dim vector retaining only critical features;
+            # all other positions zeroed so scaler dimension matches.
             self.n_borderline += 1
-            F_ext = features[INSPECTION_IDX].reshape(1, -1)
+            F_ext = np.zeros((1, 30), dtype=np.float64)
+            for idx in INSPECTION_IDX:
+                F_ext[0, idx] = features[idx]
             c_ext = float(self.ensemble.confidence_scores(F_ext)[0])
             pred  = int(c_ext >= self.tau_vote)
             if pred != int(c_ens >= 0.5):
